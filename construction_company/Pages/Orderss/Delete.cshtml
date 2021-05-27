@@ -1,0 +1,76 @@
+﻿@page
+@model construction_company.Pages.Orderss.DeleteModel
+
+@{
+    ViewData["Title"] = "Удалить 'Заказы'";
+}
+
+<h1>Удалить</h1>
+
+<h3>Вы действительно хотите удалить эту запись?</h3>
+<div>
+    <h4>Заказы</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orders.StartData)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orders.StartData)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orders.EndData)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orders.EndData)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orders.CompletionMark)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orders.CompletionMark)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orders.AboutPayment)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orders.AboutPayment)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orders.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orders.Price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orders.CustomersID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orders.CustomersID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orders.TypesOfWorkID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orders.TypesOfWorkID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orders.BrigadesID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orders.BrigadesID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orders.StaffID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orders.StaffID)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Orders.ID" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Вернуться назад</a>
+    </form>
+</div>

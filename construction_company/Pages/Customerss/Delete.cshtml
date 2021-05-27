@@ -1,0 +1,52 @@
+﻿@page
+@model construction_company.Pages.Customerss.DeleteModel
+
+@{
+    ViewData["Title"] = "Удалить 'Заказчики'";
+}
+
+<h1>Удалить</h1>
+
+<h3>Вы действительно хотите удалить эту запись?</h3>
+<div>
+    <h4>Заказчик</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Customers.FullName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Customers.FullName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Customers.Age)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Customers.Age)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Customers.Address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Customers.Address)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Customers.Phone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Customers.Phone)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Customers.PassportData)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Customers.PassportData)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Customers.ID" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Вернуться назад</a>
+    </form>
+</div>

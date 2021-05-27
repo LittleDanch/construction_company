@@ -1,0 +1,93 @@
+﻿@page
+@model construction_company.Pages.TypesOfWorks.IndexModel
+
+@{
+    ViewData["Title"] = "Виды работ";
+}
+
+<h1>Виды работ</h1>
+
+<p>
+    <a asp-page="Create">Добавить новую запись</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TypesOfWork[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypesOfWork[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypesOfWork[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypesOfWork[0].Material1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypesOfWork[0].Material2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypesOfWork[0].Material3)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.TypesOfWork) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Material.First(r => r.ID == item.Material1ID).Name
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Material.First(r => r.ID == item.Material2ID).Name
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Material.First(r => r.ID == item.Material3ID).Name
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Детали</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

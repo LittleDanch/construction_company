@@ -1,0 +1,49 @@
+﻿@page
+@model construction_company.Pages.Customerss.DetailsModel
+
+@{
+    ViewData["Title"] = "Детали заказчиков";
+}
+
+<h1>Детали</h1>
+
+<div>
+    <h4>Заказчик</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Customers.FullName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Customers.FullName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Customers.Age)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Customers.Age)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Customers.Address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Customers.Address)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Customers.Phone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Customers.Phone)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Customers.PassportData)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Customers.PassportData)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Customers.ID">Изменить</a> |
+    <a asp-page="./Index">Вернуться назад</a>
+</div>

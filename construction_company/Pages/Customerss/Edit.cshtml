@@ -1,0 +1,55 @@
+﻿@page
+@model construction_company.Pages.Customerss.EditModel
+
+@{
+    ViewData["Title"] = "Изменить данные заказчика";
+}
+
+<h1>Изменить</h1>
+
+<h4>Заказчик</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Customers.ID" />
+            <div class="form-group">
+                <label asp-for="Customers.FullName" class="control-label"></label>
+                <input asp-for="Customers.FullName" class="form-control" />
+                <span asp-validation-for="Customers.FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customers.Age" class="control-label"></label>
+                <input asp-for="Customers.Age" class="form-control" />
+                <span asp-validation-for="Customers.Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customers.Address" class="control-label"></label>
+                <input asp-for="Customers.Address" class="form-control" />
+                <span asp-validation-for="Customers.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customers.Phone" class="control-label"></label>
+                <input asp-for="Customers.Phone" class="form-control" />
+                <span asp-validation-for="Customers.Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customers.PassportData" class="control-label"></label>
+                <input asp-for="Customers.PassportData" class="form-control" />
+                <span asp-validation-for="Customers.PassportData" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Вернуться назад</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

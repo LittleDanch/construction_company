@@ -1,0 +1,59 @@
+﻿@page
+@model construction_company.Pages.TypesOfWorks.CreateModel
+
+@{
+    ViewData["Title"] = "Добавить вид работы";
+}
+
+<h1>Добавить новую запись</h1>
+
+<h4>Виды работ</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TypesOfWork.Name" class="control-label"></label>
+                <input asp-for="TypesOfWork.Name" class="form-control" />
+                <span asp-validation-for="TypesOfWork.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TypesOfWork.Description" class="control-label"></label>
+                <input asp-for="TypesOfWork.Description" class="form-control" />
+                <span asp-validation-for="TypesOfWork.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TypesOfWork.Price" class="control-label"></label>
+                <input asp-for="TypesOfWork.Price" class="form-control" />
+                <span asp-validation-for="TypesOfWork.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TypesOfWork.Material1ID" class="control-label"></label>
+                <input asp-for="TypesOfWork.Material1ID" class="form-control" />
+                <span asp-validation-for="TypesOfWork.Material1ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TypesOfWork.Material2ID" class="control-label"></label>
+                <input asp-for="TypesOfWork.Material2ID" class="form-control" />
+                <span asp-validation-for="TypesOfWork.Material2ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TypesOfWork.Material3ID" class="control-label"></label>
+                <input asp-for="TypesOfWork.Material3ID" class="form-control" />
+                <span asp-validation-for="TypesOfWork.Material3ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Добавить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Вернуться назад</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

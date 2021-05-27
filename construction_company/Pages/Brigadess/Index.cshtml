@@ -1,0 +1,75 @@
+﻿@page
+@model construction_company.Pages.Brigadess.IndexModel
+
+@{
+    ViewData["Title"] = "Бригады";
+}
+
+<h1>Бригады</h1>
+
+<p>
+    <a asp-page="Create">Добавить новую запись</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Brigades[0].Staff1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Brigades[0].Staff2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Brigades[0].Staff3)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Brigades) {
+        <tr>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Staff.First(r => r.ID == item.Staff1ID).FullName
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Staff.First(r => r.ID == item.Staff2ID).FullName
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Staff.First(r => r.ID == item.Staff3ID).FullName
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Детали</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

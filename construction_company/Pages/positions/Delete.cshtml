@@ -1,0 +1,46 @@
+﻿@page
+@model construction_company.Pages.positions.DeleteModel
+
+@{
+    ViewData["Title"] = "Удалить 'Должность'";
+}
+
+<h1>Удалить</h1>
+
+<h3>Вы действительно хотите удалить эту запись?</h3>
+<div>
+    <h4>Должность</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.position.Name_Position)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.position.Name_Position)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.position.Salary)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.position.Salary)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.position.Responsibilities)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.position.Responsibilities)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.position.Requirements)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.position.Requirements)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="position.ID" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Вернуться назад</a>
+    </form>
+</div>

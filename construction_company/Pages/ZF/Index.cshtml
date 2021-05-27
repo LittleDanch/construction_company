@@ -1,0 +1,25 @@
+﻿@page
+@model construction_company.Pages.ZF.IndexModel
+@{
+}
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Запросы</h5>
+                <p>
+                    <a class="nav-link text-dark" asp-area="" asp-page="Requests/Human_Resources_Department">Отдел кадров</a>
+                </p>
+
+                <h5 class="card-title">Фильтр</h5>
+                <form>
+                    Отобразить сотрудников с должностью:
+                    <select asp-items="Model.otdel" name="id" class="form-control-sm">
+                        <option value="-1">Должность не выбрана</option>
+                    </select>
+                    <button asp-page="Filters/Selected_positions" class="btn btn-primary">Отфильтровать</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,74 @@
+﻿@page
+@model construction_company.Pages.Orderss.CreateModel
+
+@{
+    ViewData["Title"] = "Добавить заказ";
+}
+
+<h1>Добавить новую запись</h1>
+
+<h4>Заказы</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Orders.StartData" class="control-label"></label>
+                <input asp-for="Orders.StartData" class="form-control" />
+                <span asp-validation-for="Orders.StartData" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Orders.EndData" class="control-label"></label>
+                <input asp-for="Orders.EndData" class="form-control" />
+                <span asp-validation-for="Orders.EndData" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Orders.CompletionMark" class="control-label"></label>
+                <input asp-for="Orders.CompletionMark" class="form-control" />
+                <span asp-validation-for="Orders.CompletionMark" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Orders.AboutPayment" class="control-label"></label>
+                <input asp-for="Orders.AboutPayment" class="form-control" />
+                <span asp-validation-for="Orders.AboutPayment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Orders.Price" class="control-label"></label>
+                <input asp-for="Orders.Price" class="form-control" />
+                <span asp-validation-for="Orders.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Orders.CustomersID" class="control-label"></label>
+                <input asp-for="Orders.CustomersID" class="form-control" />
+                <span asp-validation-for="Orders.CustomersID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Orders.TypesOfWorkID" class="control-label"></label>
+                <input asp-for="Orders.TypesOfWorkID" class="form-control" />
+                <span asp-validation-for="Orders.TypesOfWorkID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Orders.BrigadesID" class="control-label"></label>
+                <input asp-for="Orders.BrigadesID" class="form-control" />
+                <span asp-validation-for="Orders.BrigadesID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Orders.StaffID" class="control-label"></label>
+                <input asp-for="Orders.StaffID" class="form-control" />
+                <span asp-validation-for="Orders.StaffID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Добавить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Вернуться назад</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

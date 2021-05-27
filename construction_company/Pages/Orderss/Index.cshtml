@@ -1,0 +1,120 @@
+﻿@page
+@model construction_company.Pages.Orderss.IndexModel
+
+@{
+    ViewData["Title"] = "Заказы";
+}
+
+<h1>Заказы</h1>
+
+<p>
+    <a asp-page="Create">Добавить новую запись</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].StartData)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].EndData)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].CompletionMark)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].AboutPayment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].Customers)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].TypesOfWork)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].Brigades)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].Staff)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Orders) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartData)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndData)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompletionMark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AboutPayment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Customers.First(r => r.ID == item.CustomersID).FullName
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.TypesOfWork.First(r => r.ID == item.TypesOfWorkID).Name
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Brigades.First(r => r.ID == item.BrigadesID).ID
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Staff.First(r => r.ID == item.StaffID).FullName
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Детали</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,73 @@
+﻿@page
+@model construction_company.Pages.Orderss.DetailsModel
+
+@{
+    ViewData["Title"] = "Детали заказов";
+}
+
+<h1>Детали</h1>
+
+<div>
+    <h4>Заказ</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orders.StartData)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orders.StartData)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orders.EndData)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orders.EndData)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orders.CompletionMark)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orders.CompletionMark)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orders.AboutPayment)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orders.AboutPayment)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orders.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orders.Price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orders.CustomersID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orders.CustomersID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orders.TypesOfWorkID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orders.TypesOfWorkID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orders.BrigadesID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orders.BrigadesID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Orders.StaffID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Orders.StaffID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Orders.ID">Изменить</a> |
+    <a asp-page="./Index">Вернуться назад</a>
+</div>
